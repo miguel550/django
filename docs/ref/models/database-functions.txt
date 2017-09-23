@@ -262,7 +262,10 @@ Usage example::
     >>> authors = Author.objects.annotate(
     ...     smith_index=StrIndex('name', V('Smith'))
     ... ).order_by('smith_index')
-    >>> authors.first().smith_index
+    >>> first_author = authors.first()
+    >>> first_author.name
+    Margaret Jackson
+    >>> first_author.smith_index
     0
     >>> authors = Author.objects.annotate(
     ...    smith_index=StrIndex('name', V('Smith'))
